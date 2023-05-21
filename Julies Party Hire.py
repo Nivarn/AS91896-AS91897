@@ -22,4 +22,18 @@ item_hire_entry.grid(column=1,row=2)
 no_item_spinbox = tk.Spinbox(julies_party_hire_frame, from_=1, to=500)
 no_item_spinbox.grid(column=1, row=3)
 
+#Creating Entry Box labels
+customer_name_entry_label = tk.Label(julies_party_hire_frame, text="Customer Name: ")
+customer_name_entry_label.grid(column=0,row=0)
+receipt_number_entry_label = tk.Label(julies_party_hire_frame, text="Receipt Number  (12 Digits): ")
+receipt_number_entry_label.grid(column=0, row=1)
+item_hire_label= tk.Label(julies_party_hire_frame, text="Item for Hire: ")
+item_hire_label.grid(column=0, row=2)
+no_item_label = tk.Label(julies_party_hire_frame, text="Number of Item Being Hired: ")
+no_item_label.grid(column=0, row=3)
+
+#Spacing the widgets out
+for widget in julies_party_hire_frame.winfo_children():
+    widget.grid_configure(pady=5, padx=10)
+
 window.mainloop()
