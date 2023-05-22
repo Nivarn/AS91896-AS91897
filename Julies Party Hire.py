@@ -101,6 +101,17 @@ table.heading('item', text = 'Item')
 table.heading('no of item', text = 'Number of Item')
 table.pack()
 
+#Code for Delete Button
+def delete_selected_rows():
+    for i in table.selection():
+        table.delete(i)
+        messagebox.showinfo(title='Deleted!', message='Customer Information deleted.')
+
+#Delete button
+delete_button = tk.Button(frame, text="Delete Selected Row", command=delete_selected_rows)
+delete_button.pack(padx=20, pady=20)
+
+
 window.mainloop()
 
 
