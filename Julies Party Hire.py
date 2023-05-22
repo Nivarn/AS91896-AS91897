@@ -47,6 +47,7 @@ def customer_information():
         messagebox.showwarning(title='Error!', message='Invalid Number!')
     else:
         messagebox.showinfo(title='Stored!', message='Group information has been stored!')
+        table.insert( parent='', index =tk.END,values =appendlist)
         
 
 #TKINTER GUI
