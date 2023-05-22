@@ -14,6 +14,7 @@ max_item_no = 500
 min_receipt_number = 100000000000
 max_receipt_number = 999999999999
 
+#Creating a command that can take information from the entry boxes and store it.
 def customer_information():
     name = customer_name_entry.get()
     receipt_no = int(receipt_number_entry.get())
@@ -25,11 +26,10 @@ def customer_information():
     print("Item being Hired: ", item)
     print("Number of Item being Hired", no_of_item)
 
-
-
-    
+    #formatting the lists
     appendlist = [name, receipt_no, item, no_of_item]
     julies_party_hire_customers.append(appendlist)
+
     #ERROR CODE
     if name  == "":
         messagebox.showwarning(title='Error!', message='Customer Name has not been entered.')
@@ -49,7 +49,7 @@ def customer_information():
         messagebox.showinfo(title='Stored!', message='Group information has been stored!')
         
 
-
+#TKINTER GUI
 
 #Main Window
 window = tk.Tk() 
@@ -91,6 +91,14 @@ done_button.pack(padx= 20, pady= 20)
 #Spacing the widgets out
 for widget in julies_party_hire_frame.winfo_children():
     widget.grid_configure(pady=5, padx=10)
+
+#Making the table
+table = ttk.Treeview(window, columns=('name', 'receipt number', 'item', 'no of item'), show="headings")
+table.heading('name', text = 'Customer Name')
+table.heading('receipt number', text = 'Receipt Number')
+table.heading('item', text = 'Item')
+table.heading('no of item', text = 'Number of Item')
+table.pack()
 
 window.mainloop()
 
