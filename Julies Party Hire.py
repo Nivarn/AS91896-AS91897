@@ -83,6 +83,11 @@ item_hire_label.grid(column=0, row=2)
 no_item_label = tk.Label(julies_party_hire_frame, text="Number of Item Being Hired: ")
 no_item_label.grid(column=0, row=3)
 
+#Done Button
+done_button = tk.Button(frame, text="Store", command=customer_information)
+done_button.pack(padx= 20, pady= 20)
+
+
 #Spacing the widgets out
 for widget in julies_party_hire_frame.winfo_children():
     widget.grid_configure(pady=5, padx=10)
