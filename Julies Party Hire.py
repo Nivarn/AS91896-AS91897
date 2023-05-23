@@ -49,7 +49,7 @@ def customer_information():
         messagebox.showinfo(title='Stored!', message='Group information has been stored!')
         table.insert( parent='', index =tk.END,values =appendlist)
         
-
+        
 #TKINTER GUI
 
 #Main Window
@@ -88,6 +88,16 @@ no_item_label.grid(column=0, row=3)
 done_button = tk.Button(frame, text="Store", command=customer_information)
 done_button.pack(padx= 20, pady= 20)
 
+#Clearing Entry Boxes
+def clear_text():
+    customer_name_entry.delete(0, tk.END)
+    receipt_number_entry.delete(0, tk.END)
+    item_hire_entry.delete(0, tk.END)
+    no_item_spinbox.delete(0, tk.END)
+
+#Clear Entry Box Button
+clear_text_button = tk.Button(window, text="Clear Entry Boxes" )
+clear_text_button.pack()
 
 #Spacing the widgets out
 for widget in julies_party_hire_frame.winfo_children():
@@ -110,6 +120,7 @@ def delete_selected_rows():
 #Delete button
 delete_button = tk.Button(frame, text="Delete Selected Row", command=delete_selected_rows)
 delete_button.pack(padx=20, pady=20)
+
 
 
 window.mainloop()
