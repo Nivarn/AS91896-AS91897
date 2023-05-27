@@ -30,9 +30,9 @@ def customer_information():
     if name  == "":
         messagebox.showwarning(title='Error!', message='Customer Name has not been entered.')
     elif receipt_no == "":
-        messagebox.showwarning(title='Error!', message='Reciept Number has not been entered.')
+        messagebox.showwarning(title='Error!', message='Receipt Number has not been entered.')
     elif receipt_no.isnumeric() == False:
-        messagebox.showwarning(title='Error!', message= 'Reciept Number Invalid!')
+        messagebox.showwarning(title='Error!', message= 'Receipt Number Invalid!')
     elif item == "":
         messagebox.showwarning(title='Error!', message='Item for Hire has not been entered.')
     elif no_of_item > max_item_no:
@@ -40,7 +40,7 @@ def customer_information():
     elif no_of_item < min_item_no:
         messagebox.showwarning(title='Error!', message='Invalid Number!')
     else:
-        messagebox.showinfo(title='Stored!', message='Group information has been stored!')
+        messagebox.showinfo(title='Stored!', message='Customer information has been stored!')
         table.insert( parent='', index =tk.END,values =appendlist)
         customer_name_entry.delete(0, tk.END)
         receipt_number_entry.delete(0, tk.END)
@@ -62,12 +62,12 @@ frame.pack()
 julies_party_hire_frame = tk.LabelFrame(frame, text = "JULIE'S PARTY HIRE", width = 900, height = 900)
 julies_party_hire_frame.pack(padx=10, pady=10)
 
-#Creating the Entry Boxes
+#Creating the Entry Boxes / Spin Boxes / Combo Boxes
 customer_name_entry = tk.Entry(julies_party_hire_frame)
 customer_name_entry.grid(column=1,row=0)
 receipt_number_entry = tk.Entry(julies_party_hire_frame)
 receipt_number_entry.grid(column=1, row=1)
-item_hire_entry = tk.Entry(julies_party_hire_frame)
+item_hire_entry = ttk.Combobox(julies_party_hire_frame, values=["Balloons", "Food Warmers", "Tables", "Chairs", "Table Liners", "Speakers", "LED Lights" ], state='readonly')
 item_hire_entry.grid(column=1,row=2)
 no_item_spinbox = tk.Spinbox(julies_party_hire_frame, from_=1, to=500)
 no_item_spinbox.grid(column=1, row=3)
