@@ -15,7 +15,22 @@ def customer_information():
     name = customer_name_entry.get()
     receipt_no = receipt_number_entry.get()
     item = item_hire_entry.get()
-    no_of_item = int(no_item_spinbox.get())
+    no_of_item = no_item_spinbox.get()
+
+    # This part of the code checks if the no_of_item spin box has a correct value of an
+    if not no_of_item.isdigit():
+        messagebox.showwarning(title='Error!', message='Invalid value for Number of Items.')
+        return
+
+    no_of_item = int(no_of_item)
+
+    if no_of_item > max_item_no:
+        messagebox.showwarning(title='Error!', message='Too many Items!')
+    elif no_of_item < min_item_no:
+        messagebox.showwarning(title='Error!', message='Invalid Number!')
+    else:
+        print("Number of Item being Hired (converted):", no_of_item)
+
 
     print("Full Name of Customer: ", name)
     print("Reciept Number: ", receipt_no)
