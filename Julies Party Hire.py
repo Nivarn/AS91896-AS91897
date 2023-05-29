@@ -31,7 +31,7 @@ def customer_information():
     else:
         print("Number of Item being Hired (converted):", no_of_item)
 
-
+    
     print("Full Name of Customer: ", name)
     print("Reciept Number: ", receipt_no)
     print("Item being Hired: ", item)
@@ -44,6 +44,8 @@ def customer_information():
     #ERROR CODE
     if name  == "":
         messagebox.showwarning(title='Error!', message='Customer Name has not been entered.')
+    elif name.isalpha() == False:
+        messagebox.showwarning(title='Error!', message='Please Enter Only Alphabetical Characters')
     elif receipt_no == "":
         messagebox.showwarning(title='Error!', message='Receipt Number has not been entered.')
     elif receipt_no.isnumeric() == False:
